@@ -6,11 +6,9 @@ repository = "https://thunderstore.io"
 
 [package]
 namespace = "Daxxpurpura"
-name = "CurseWhenFriendDies"
-description = "A simple mod that inflicts 2 units of curse to all players when someone
-dies (excluding the dead player) to incentivize keeping as many players
-as possible alive."
-websiteUrl = "" # TODO: Add a link to your mod repository here (optional)
+name = "Curse_When_Friend_Dies"
+description = "A simple mod that inflicts 2 units of curse to all players who have it installed when someone dies (excluding the dead player) to incentivize keeping as many players as possible alive."
+websiteUrl = "https://github.com/DaxxPurpura/curse-when-friend-dies"
 containsNsfwContent = false
 
 [package.dependencies]
@@ -43,4 +41,4 @@ communities = [ "peak", ]
 [publish.categories]
 # See categories at:
 # https://thunderstore.io/api/experimental/community/peak/category/
-peak = [ "mods", ]
+peak = [ "mods", "misc", "client"]

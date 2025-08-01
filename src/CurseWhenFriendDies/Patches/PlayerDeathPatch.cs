@@ -1,4 +1,5 @@
 using HarmonyLib;
+using Photon.Pun;
 
 namespace CurseWhenFriendDies.Patches;
 
@@ -8,15 +9,16 @@ public class PlayerDeathPatch
 {
     static void Postfix(Character __instance)
     {
-        foreach (Character character in Character.AllCharacters)
+        var clientCharacter = Character.localCharacter;
+        if (clientCharacter != __instance)
         {
-            if (character != __instance)
-            {
-                character.refs.afflictions.AddStatus(CharacterAfflictions.STATUSTYPE.Curse, 0.05f);
-            }
+            clientCharacter.refs.afflictions.AddStatus(CharacterAfflictions.STATUSTYPE.Curse, 0.05f);
+            Plugin.Log.LogInfo("Applied 0.05 Curse to " + clientCharacter.characterName + " after death of " + __instance.characterName);
         }
-
-        Plugin.Log.LogInfo("Applied 0.05 Curse to all players after death of: " + __instance.characterName);
+        else
+        {
+            Plugin.Log.LogInfo("Applied 0.05 Curse to other players with CurseWhenFriendDies Mod");
+        }
 
     }
 }
