@@ -1,7 +1,8 @@
 # Curse When Friend Dies
 
-A simple mod that inflicts 2 units of curse to all players who have it
-installed when someone dies (excluding the dead player) to incentivize
-keeping as many players as possible alive.
+A simple mod that applies 2 curse units (configurable) to all players
+(with the mod installed) when someone dies, and removes 2 curse units
+(configurable) when a player is revived, incentivizing keeping as
+many players as possible alive.
 
-Mod idea requested by joytomaro
+Mod idea suggested by joytomaro
